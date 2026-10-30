@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>サクマーズ｜マサカーズ予選会（Sakumars Open）</title>
-<meta name="description" content="マサカーズ本戦への出場権をかけた予選会「サクマーズ」。開催概要・エントリー情報は近日公開予定です。">
+<meta name="description" content="マサカーズ本戦への出場権をかけた予選会「サクマーズ」。2026年10月31日（土）関東国際カントリークラブにて開催。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Noto+Serif+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -187,8 +187,19 @@
   .foot-col .k{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold-soft);font-size:.9rem}
   .copy{text-align:center;padding-top:30px;font-size:.74rem;letter-spacing:.14em;color:rgba(250,241,240,.5);font-family:"Cormorant Garamond",serif}
 
+  /* ---------- Schedule ---------- */
+  .tl{max-width:720px;margin:0 auto;position:relative}
+  .tl::before{content:"";position:absolute;left:118px;top:6px;bottom:6px;width:1px;background:var(--line)}
+  .tl-phase{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);font-size:1.2rem;margin:30px 0 18px;padding-left:150px}
+  .tl-item{display:grid;grid-template-columns:118px 1fr;gap:34px;padding:16px 0;align-items:baseline;position:relative}
+  .tl-item .t{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:1.35rem;color:var(--green-deep);text-align:right}
+  .tl-item::before{content:"";position:absolute;left:114px;top:20px;width:9px;height:9px;background:var(--gold);transform:rotate(45deg)}
+  .tl-item .d h4{font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:4px}
+  .tl-item .d p{font-weight:300;font-size:.88rem;color:var(--ink-soft)}
+  .tl-item .d .place{display:inline-block;margin-top:6px;font-family:"Cormorant Garamond",serif;font-style:italic;font-size:.85rem;color:var(--gold)}
+
   /* ---------- Feature card (roll-of-honour style) ---------- */
-  .defending{max-width:620px;margin:0 auto;text-align:center;border:1px solid var(--gold);padding:48px 32px;position:relative;background:linear-gradient(180deg,rgba(232,169,192,.12),transparent)}
+  .defending{max-width:620px;margin:0 auto 58px;text-align:center;border:1px solid var(--gold);padding:48px 32px;position:relative;background:linear-gradient(180deg,rgba(232,169,192,.12),transparent)}
   .defending .crest2{width:72px;height:72px;margin:0 auto 14px;object-fit:contain;border-radius:50%;display:block;overflow:visible}
   .defending .cap{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);letter-spacing:.14em;font-size:1rem;margin-bottom:4px}
   .defending .ed{font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--ink-soft)}
@@ -196,6 +207,14 @@
   .sec-green .defending h3{color:var(--ivory)}
   .defending .sc{font-family:"Noto Serif JP",serif;color:var(--ink-soft);font-size:.98rem;line-height:2}
   .sec-green .defending .sc{color:rgba(250,241,240,.82)}
+  .roll{max-width:760px;margin:0 auto;border-top:1px solid var(--line)}
+  .roll-row{display:grid;grid-template-columns:96px 1fr 130px;gap:22px;padding:17px 6px;border-bottom:1px solid var(--line);align-items:baseline}
+  .roll-row .ed{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);font-size:1.05rem;letter-spacing:.04em}
+  .roll-row .nm{font-weight:500;color:var(--ink);letter-spacing:.04em}
+  .roll-row .nm .intro{display:block;font-weight:300;color:var(--ink-soft);font-size:.78rem;margin-top:2px;letter-spacing:.04em}
+  .roll-row .sc{text-align:right;font-family:"Cormorant Garamond",serif;color:var(--ink-soft);font-size:1.02rem}
+  .link-gold{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:2px;transition:.25s}
+  .link-gold:hover{color:var(--green-deep)}
 
   /* ---------- reveal ---------- */
   .rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
@@ -235,6 +254,12 @@
     .prize-card.first{padding:44px 24px}
     .dl .row{grid-template-columns:1fr;gap:4px;padding:18px 4px}
     .dl dt{font-size:1.05rem}
+    .tl::before{left:86px}
+    .tl-item{grid-template-columns:82px 1fr;gap:22px}
+    .tl-item::before{left:82px}
+    .tl-phase{padding-left:104px}
+    .roll-row{grid-template-columns:70px 1fr;gap:14px}
+    .roll-row .sc{grid-column:2;text-align:left}
     .news-item{grid-template-columns:1fr;gap:4px}
     .news-item .more{justify-self:start}
     .defending h3{font-size:2.1rem}
@@ -279,15 +304,15 @@
     <p class="jp-tag">第<span class="edition-no">1</span>回</p>
     <h1><span class="naranu">マサカーズ 予選会</span>サクマーズ</h1>
     <p class="open-tag">Road to マサカーズ</p>
-    <p class="lead">マサカーズ本戦への出場権をかけた予選会「サクマーズ」。<br>開催概要・エントリー情報は近日公開いたします。<br>続報をお待ちください。</p>
+    <p class="lead">マサカーズ本戦への出場権をかけた予選会「サクマーズ」。<br>2026年10月31日（土）、関東国際カントリークラブにて開催します。</p>
     <div class="facts">
-      <div class="fact"><div class="l">Date</div><div class="v">Coming Soon</div></div>
-      <div class="fact"><div class="l">Venue</div><div class="v">調整中</div></div>
-      <div class="fact"><div class="l">Format</div><div class="v">予選ラウンド</div></div>
-      <div class="fact"><div class="l">Field</div><div class="v">エントリー準備中</div></div>
+      <div class="fact"><div class="l">Date</div><div class="v">2026.10.31（土）</div></div>
+      <div class="fact"><div class="l">Venue</div><div class="v">関東国際CC</div></div>
+      <div class="fact"><div class="l">Start</div><div class="v">08:03 東コース</div></div>
+      <div class="fact"><div class="l">Field</div><div class="v">12名（3組）</div></div>
     </div>
     <div class="btns">
-      <a href="#about" class="btn solid">大会について見る</a>
+      <a href="#outline" class="btn solid">開催概要を見る</a>
     </div>
   </div>
   <div class="scroll-ind"><span>Scroll</span><div class="bar"></div></div>
@@ -305,7 +330,7 @@
       <div class="about-card">
         <div class="no">i.</div>
         <h3>組み合わせは<br>主催者が編成</h3>
-        <p>組時間・組み合わせは主催者が編成します。詳細は確定次第ご案内予定です。</p>
+        <p>全3組・計12名。組時間とメンバーは組み合わせ表のとおりです。</p>
       </div>
       <div class="about-card">
         <div class="no">ii.</div>
@@ -329,17 +354,17 @@
       <h2>開催概要</h2>
     </div>
     <dl class="dl rv">
-      <div class="row"><dt>開催日</dt><dd><b>調整中</b><small>確定次第、本ページで公開します。</small></dd></div>
-      <div class="row"><dt>会場</dt><dd><b>調整中</b><small>アクセス情報とあわせて追って掲載します。</small></dd></div>
-      <div class="row"><dt>スタート</dt><dd><b>調整中</b><small>組時間は組み合わせ確定後にご案内します。</small></dd></div>
-      <div class="row"><dt>集合</dt><dd><b>調整中</b><small>集合時間・受付方法は追ってご案内します。</small></dd></div>
-      <div class="row"><dt>競技方法</dt><dd><b>新ペリア方式（予定）</b><small>詳細ルールは確定次第ご案内します。</small></dd></div>
-      <div class="row"><dt>定員</dt><dd><b>調整中</b><small>エントリー受付の開始も追ってお知らせします。</small></dd></div>
-      <div class="row"><dt>服装</dt><dd><b>コース規定に準じます</b><small>会場確定後、コース規定にあわせてご案内します。</small></dd></div>
+      <div class="row"><dt>開催日</dt><dd><b>2026年10月31日（土）</b></dd></div>
+      <div class="row"><dt>会場</dt><dd><b>関東国際カントリークラブ【アコーディア・ゴルフ】</b><small>東コースよりスタート</small></dd></div>
+      <div class="row"><dt>スタート</dt><dd><b>08:03〜　東コース</b><small>組時間：08:03 ／ 08:09 ／ 08:15（全3組）</small></dd></div>
+      <div class="row"><dt>定員</dt><dd><b>12名（3組）</b><small>出場選手は組み合わせ表のとおりです。</small></dd></div>
+      <div class="row"><dt>予約者</dt><dd><b>作間裕一</b></dd></div>
+      <div class="row"><dt>競技方法</dt><dd><b>新ペリア方式（予定）</b><small>詳細ルールは当日ご案内します。</small></dd></div>
+      <div class="row"><dt>服装</dt><dd><b>コース規定に準じます</b></dd></div>
     </dl>
     <div class="outline-price outline-price--foot rv">
-      <div class="amt">¥—</div>
-      <div class="note">参加費・プレー代は調整中です。<br>金額が確定次第、内訳とあわせてご案内します。</div>
+      <div class="amt">¥12,990</div>
+      <div class="note">税抜11,264円＋消費税1,126円＋ゴルフ場利用税600円。<br>1組2名の場合はお一人様につき別途+2,200円。</div>
     </div>
   </div>
 </section>
@@ -351,7 +376,12 @@
       <span class="kicker">Card of the Day</span>
       <h2>当日の流れ</h2>
     </div>
-    <p class="about-lead rv">当日のタイムスケジュールは近日公開いたします。<br>集合からプレー、表彰までの流れを、確定後にこちらへ掲載します。</p>
+    <div class="tl rv">
+      <div class="tl-phase">Morning</div>
+      <div class="tl-item"><div class="t">08:03</div><div class="d"><h4>第1組スタート</h4><p>作間 裕一　／　五十嵐 靖史　／　飯野 奈歩　／　北村 亮</p><span class="place">東コース</span></div></div>
+      <div class="tl-item"><div class="t">08:09</div><div class="d"><h4>第2組スタート</h4><p>高松 伸一　／　河本 泰之　／　野村 雅宏　／　若月 康平</p><span class="place">東コース</span></div></div>
+      <div class="tl-item"><div class="t">08:15</div><div class="d"><h4>第3組スタート</h4><p>齋藤 正和　／　吉田 昌幸　／　遠藤 哲哉　／　伊藤 遵<br>全3組・計12名。</p><span class="place">東コース</span></div></div>
+    </div>
   </div>
 </section>
 
@@ -395,17 +425,31 @@
     <div class="sec-head rv">
       <span class="kicker">The Field</span>
       <h2>出場選手</h2>
-      <p class="sub">エントリー情報は近日公開いたします。</p>
+      <p class="sub">第1回サクマーズに集う12名のエントラントたち。</p>
     </div>
     <div class="defending rv">
       <svg class="crest2" width="72" height="72" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
         <g fill="var(--gold)"><ellipse cx="50" cy="27" rx="11.5" ry="20"/><ellipse cx="50" cy="27" rx="11.5" ry="20" transform="rotate(72 50 50)"/><ellipse cx="50" cy="27" rx="11.5" ry="20" transform="rotate(144 50 50)"/><ellipse cx="50" cy="27" rx="11.5" ry="20" transform="rotate(216 50 50)"/><ellipse cx="50" cy="27" rx="11.5" ry="20" transform="rotate(288 50 50)"/></g>
         <circle cx="50" cy="50" r="8" fill="var(--sakura)"/>
       </svg>
-      <div class="cap">Entry</div>
-      <div class="ed">Coming Soon</div>
-      <h3>エントリー準備中</h3>
-      <div class="sc">出場選手一覧は、エントリー確定後にこちらへ掲載します。<br>いましばらくお待ちください。</div>
+      <div class="cap">2026 Field</div>
+      <div class="ed">全3組　12名</div>
+      <h3>出場選手一覧</h3>
+      <div class="sc">東コーススタート　08:03〜</div>
+    </div>
+    <div class="roll rv">
+      <div class="roll-row"><span class="ed">No.1</span><span class="nm">作間　裕一<span class="intro">予約者</span></span><span class="sc">第1組</span></div>
+      <div class="roll-row"><span class="ed">No.2</span><span class="nm">五十嵐　靖史</span><span class="sc">第1組</span></div>
+      <div class="roll-row"><span class="ed">No.3</span><span class="nm">飯野　奈歩</span><span class="sc">第1組</span></div>
+      <div class="roll-row"><span class="ed">No.4</span><span class="nm">北村　亮</span><span class="sc">第1組</span></div>
+      <div class="roll-row"><span class="ed">No.5</span><span class="nm">高松　伸一</span><span class="sc">第2組</span></div>
+      <div class="roll-row"><span class="ed">No.6</span><span class="nm">河本　泰之</span><span class="sc">第2組</span></div>
+      <div class="roll-row"><span class="ed">No.7</span><span class="nm">野村　雅宏</span><span class="sc">第2組</span></div>
+      <div class="roll-row"><span class="ed">No.8</span><span class="nm">若月　康平</span><span class="sc">第2組</span></div>
+      <div class="roll-row"><span class="ed">No.9</span><span class="nm">齋藤　正和</span><span class="sc">第3組</span></div>
+      <div class="roll-row"><span class="ed">No.10</span><span class="nm">吉田　昌幸</span><span class="sc">第3組</span></div>
+      <div class="roll-row"><span class="ed">No.11</span><span class="nm">遠藤　哲哉</span><span class="sc">第3組</span></div>
+      <div class="roll-row"><span class="ed">No.12</span><span class="nm">伊藤　遵</span><span class="sc">第3組</span></div>
     </div>
   </div>
 </section>
@@ -419,16 +463,17 @@
     </div>
     <div class="venue-grid rv">
       <div class="venue-photo">
-        <div class="photo-ph">Coming Soon<span>会場写真は近日公開</span></div>
+        <div class="photo-ph">Kanto Kokusai CC<span>東コース</span></div>
       </div>
       <div class="venue-info">
-        <h3>会場<br><em>Coming Soon</em></h3>
-        <p>開催会場は調整中です。確定次第、アクセス情報・コース概要とあわせて掲載いたします。</p>
+        <h3>関東国際カントリークラブ<br><em>【アコーディア・ゴルフ】</em></h3>
+        <p>当日は東コースよりスタートします。組時間は 08:03 ／ 08:09 ／ 08:15（全3組）。</p>
         <div class="venue-stats">
-          <div><div class="n">—</div><div class="k">Par</div></div>
-          <div><div class="n">—</div><div class="k">Yards</div></div>
-          <div><div class="n">—</div><div class="k">Holes</div></div>
+          <div><div class="n">3</div><div class="k">Groups</div></div>
+          <div><div class="n">12</div><div class="k">Players</div></div>
+          <div><div class="n">East</div><div class="k">Course</div></div>
         </div>
+        <a href="https://maps.google.com/?q=%E9%96%A2%E6%9D%B1%E5%9B%BD%E9%9A%9B%E3%82%AB%E3%83%B3%E3%83%88%E3%83%AA%E3%83%BC%E3%82%AF%E3%83%A9%E3%83%96" class="link-gold" target="_blank" rel="noopener">Googleマップで開く →</a>
       </div>
     </div>
   </div>
@@ -447,7 +492,7 @@
       <div class="ed">本戦</div>
       <h3>マサカーズ</h3>
       <div class="sc" style="margin-bottom:24px">マスターズならぬ、マサカーズ。全米（ぜんこめ）オープン チャンピオンシップ。<br>本戦特設サイトはこちらから。</div>
-      <a href="https://kei-soeda.github.io/golf-compe-masters/v5/" class="btn solid" target="_blank" rel="noopener">マサカーズ本戦サイトへ →</a>
+      <a href="https://masakarz8667.shotty.net/" class="btn solid" target="_blank" rel="noopener">マサカーズ本戦サイトへ →</a>
     </div>
   </div>
 </section>
@@ -461,8 +506,8 @@
     </div>
     <div class="news-list rv">
       <div class="news-item">
-        <span class="date">Coming Soon</span>
-        <span class="txt">サクマーズ特設サイトを公開しました。開催概要・エントリー情報は追って掲載いたします。</span>
+        <span class="date">2026.10.31</span>
+        <span class="txt">サクマーズ開催概要を公開しました｜2026年10月31日（土）／関東国際カントリークラブ 東コース</span>
         <a href="#outline" class="more">詳細を見る →</a>
       </div>
     </div>
@@ -473,17 +518,17 @@
 <section class="sec sec-green entry" id="entry">
   <div class="wrap">
     <div class="rv">
-      <span class="kicker">Coming Soon</span>
-      <h2 style="margin-top:14px">サクマーズ、<br>まもなく始動。</h2>
-      <p class="meta">開催日 <b>調整中</b>　／　会場 <b>調整中</b></p>
+      <span class="kicker">Join Us</span>
+      <h2 style="margin-top:14px">サクマーズ、<br>本戦への切符をかけて。</h2>
+      <p class="meta">開催日 <b>2026年10月31日（土）</b>　／　参加者 <b>12名（3組）</b></p>
       <div class="btns" style="justify-content:center">
         <a href="#outline" class="btn solid">開催概要を見る</a>
-        <a href="https://kei-soeda.github.io/golf-compe-masters/v5/" class="btn" target="_blank" rel="noopener">マサカーズ本戦を見る</a>
+        <a href="https://masakarz8667.shotty.net/" class="btn" target="_blank" rel="noopener">マサカーズ本戦を見る</a>
       </div>
       <p class="entry-note">
-        続報をお待ちください。<br>
-        <b>主催：サクマーズ実行委員会</b><br>
-        開催概要・エントリー情報は確定次第、本ページで公開します。
+        ご参加の皆様、よろしくお願いいたします。<br>
+        <b>予約者：作間裕一</b><br>
+        プレー代 12,990円（税抜11,264円＋消費税1,126円＋ゴルフ場利用税600円）。
       </p>
     </div>
   </div>
@@ -516,10 +561,10 @@
       <div class="foot-col">
         <h4>Information</h4>
         <ul>
-          <li><span class="k">主催</span><br><span>調整中</span></li>
-          <li><span class="k">開催日</span><br><span>調整中</span></li>
-          <li><span class="k">会場</span><br><span>調整中</span></li>
-          <li><span class="k">本戦</span><br><span><a href="https://kei-soeda.github.io/golf-compe-masters/v5/" target="_blank" rel="noopener">マサカーズ</a></span></li>
+          <li><span class="k">予約者</span><br><span>作間裕一</span></li>
+          <li><span class="k">開催日</span><br><span>2026年10月31日（土）</span></li>
+          <li><span class="k">会場</span><br><span>関東国際カントリークラブ</span></li>
+          <li><span class="k">本戦</span><br><span><a href="https://masakarz8667.shotty.net/" target="_blank" rel="noopener">マサカーズ</a></span></li>
         </ul>
       </div>
     </div>
