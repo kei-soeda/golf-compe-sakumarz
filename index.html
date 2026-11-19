@@ -63,10 +63,9 @@
   .hero{
     min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--cream);
     background:
-      radial-gradient(circle at 18% 22%, rgba(232,169,192,.22), transparent 42%),
-      radial-gradient(circle at 82% 78%, rgba(232,169,192,.14), transparent 46%),
-      linear-gradient(180deg, rgba(90,31,57,.92), rgba(63,20,42,.97)),
-      #5a1f39;
+      radial-gradient(circle at 18% 22%, rgba(232,169,192,.18), transparent 42%),
+      linear-gradient(180deg, rgba(90,31,57,.78), rgba(63,20,42,.90)),
+      url('images/hero.jpg?v=20261119') center/cover no-repeat;
     position:relative;overflow:hidden;padding:120px 0 80px;
   }
   .hero::before{content:"";position:absolute;inset:0;opacity:.05;pointer-events:none;background-image:repeating-linear-gradient(115deg,#fff 0 2px,transparent 2px 9px)}
@@ -216,6 +215,34 @@
   .link-gold{font-family:"Cormorant Garamond",serif;font-style:italic;color:var(--gold);border-bottom:1px solid var(--gold);padding-bottom:2px;transition:.25s}
   .link-gold:hover{color:var(--green-deep)}
 
+  /* ---------- Slideshow / Gallery ---------- */
+  .scene-show{display:flex;flex-direction:column;gap:16px;margin-top:8px}
+  .scene-stage{
+    position:relative;aspect-ratio:16/9;min-height:380px;
+    border:1px solid var(--line);overflow:hidden;
+    background:linear-gradient(150deg,#8f3557,#3f142a);
+  }
+  .scene-slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .55s ease,visibility .55s ease}
+  .scene-slide.is-active{opacity:1;visibility:visible}
+  .scene-slide img{width:100%;height:100%;object-fit:cover}
+  .scene-side{
+    border:1px solid var(--line);padding:14px 18px;
+    display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 16px;
+    background:rgba(255,250,251,.45);
+  }
+  .scene-count{font-family:"Cormorant Garamond",serif;letter-spacing:.08em;font-size:1.05rem;color:var(--green-deep);text-align:center;min-width:4.5em}
+  .scene-btn{
+    width:48px;height:48px;border:1px solid var(--gold);background:transparent;color:var(--green-deep);
+    cursor:pointer;font-family:"Cormorant Garamond",serif;font-size:1.35rem;line-height:1;transition:background .25s,color .25s;
+  }
+  .scene-btn:hover{background:var(--gold);color:var(--green-darker)}
+  .scene-dots{display:flex;flex-direction:row;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;max-width:420px}
+  .scene-dots button{width:8px;height:8px;border-radius:50%;border:1px solid var(--gold);background:transparent;padding:0;cursor:pointer}
+  .scene-dots button.is-active{background:var(--gold)}
+  .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:42px}
+  .gal-item{aspect-ratio:1/1;position:relative;overflow:hidden;border:1px solid var(--line);background:linear-gradient(150deg,#8f3557,#3f142a)}
+  .gal-item img{width:100%;height:100%;object-fit:cover}
+
   /* ---------- reveal ---------- */
   .rv{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
   .rv.in{opacity:1;transform:none}
@@ -263,6 +290,10 @@
     .news-item{grid-template-columns:1fr;gap:4px}
     .news-item .more{justify-self:start}
     .defending h3{font-size:2.1rem}
+    .scene-show{gap:12px}
+    .scene-stage{min-height:240px}
+    .scene-side{padding:12px 14px;gap:10px 12px}
+    .gal{grid-template-columns:repeat(2,1fr);gap:10px}
     .foot-top{grid-template-columns:1fr;gap:30px}
   }
   @media(prefers-reduced-motion:reduce){
@@ -288,6 +319,7 @@
       <a href="#outline">開催概要</a>
       <a href="#schedule">当日の流れ</a>
       <a href="#players">出場選手</a>
+      <a href="#gallery">ギャラリー</a>
       <a href="#venue">会場</a>
       <a href="#related">関連大会</a>
     </nav>
@@ -303,7 +335,7 @@
     <p class="jp-tag">第<span class="edition-no">1</span>回</p>
     <h1><span class="naranu">マサカーズ 予選会</span>サクマーズ</h1>
     <p class="open-tag">Road to マサカーズ</p>
-    <p class="lead">マサカーズ本戦への出場権をかけた予選会「サクマーズ」。<br>2026年10月31日（土）、関東国際カントリークラブにて開催します。</p>
+    <p class="lead">マサカーズ本戦への出場権をかけた予選会「サクマーズ」。<br>2026年10月31日（土）、関東国際カントリークラブにて開催しました。</p>
     <div class="facts">
       <div class="fact"><div class="l">Date</div><div class="v">2026.10.31（土）</div></div>
       <div class="fact"><div class="l">Venue</div><div class="v">関東国際CC</div></div>
@@ -419,6 +451,55 @@
   </div>
 </section>
 
+<!-- ================= GALLERY ================= -->
+<section class="sec sec-green" id="gallery">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="kicker">Gallery</span>
+      <h2>ギャラリー</h2>
+      <p class="sub">第1回サクマーズの様子です。</p>
+    </div>
+    <div class="scene-show rv" data-slideshow>
+      <div class="scene-stage">
+        <figure class="scene-slide is-active"><img src="images/slideshow/slide-01.jpg?v=20261119" alt="クラブハウスでの集合"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-02.jpg?v=20261119" alt="ラウンジでの記念写真"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-03.jpg?v=20261119" alt="クラブハウスでの交流"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-04.jpg?v=20261119" alt="コースでの一コマ"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-05.jpg?v=20261119" alt="グリーンでの祝福"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-06.jpg?v=20261119" alt="プレー中の様子"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-07.jpg?v=20261119" alt="ティーショットの一コマ"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-08.jpg?v=20261119" alt="参加者の集合写真"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-09.jpg?v=20261119" alt="ラウンドの思い出"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-10.jpg?v=20261119" alt="コースサイドの風景"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-11.jpg?v=20261119" alt="クラブハウスでの一幕"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-12.jpg?v=20261119" alt="フェアウェイでのショット"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-13.jpg?v=20261119" alt="参加者同士の交流"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-14.jpg?v=20261119" alt="プレー後の様子"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-15.jpg?v=20261119" alt="記念の一枚"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-16.jpg?v=20261119" alt="ラウンド風景"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-17.jpg?v=20261119" alt="笑顔のスナップ"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-18.jpg?v=20261119" alt="コンペの一コマ"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-19.jpg?v=20261119" alt="集合の記念写真"></figure>
+        <figure class="scene-slide"><img src="images/slideshow/slide-20.jpg?v=20261119" alt="コースの景色"></figure>
+      </div>
+      <div class="scene-side">
+        <div class="scene-count" data-count>1 / 20</div>
+        <button type="button" class="scene-btn" data-prev aria-label="前の写真">‹</button>
+        <button type="button" class="scene-btn" data-next aria-label="次の写真">›</button>
+        <div class="scene-dots" data-dots></div>
+      </div>
+    </div>
+    <div class="gal rv">
+      <div class="gal-item"><img src="images/slideshow/slide-04.jpg?v=20261119" alt="コースでの一コマ"></div>
+      <div class="gal-item"><img src="images/slideshow/slide-05.jpg?v=20261119" alt="グリーンでの祝福"></div>
+      <div class="gal-item"><img src="images/slideshow/slide-02.jpg?v=20261119" alt="ラウンジでの記念写真"></div>
+      <div class="gal-item"><img src="images/slideshow/slide-01.jpg?v=20261119" alt="クラブハウスでの集合"></div>
+      <div class="gal-item"><img src="images/slideshow/slide-12.jpg?v=20261119" alt="フェアウェイでのショット"></div>
+      <div class="gal-item"><img src="images/slideshow/slide-20.jpg?v=20261119" alt="コースの景色"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= VENUE ================= -->
 <section class="sec sec-ivory" id="venue">
   <div class="wrap">
@@ -428,7 +509,7 @@
     </div>
     <div class="venue-grid rv">
       <div class="venue-photo">
-        <img src="images/venue.jpg?v=20261031" alt="関東国際カントリークラブのコースとクラブハウス"
+        <img src="images/venue.jpg?v=20261119" alt="関東国際カントリークラブのコースとクラブハウス"
              style="width:100%;height:100%;object-fit:cover;">
       </div>
       <div class="venue-info">
@@ -473,8 +554,8 @@
     <div class="news-list rv">
       <div class="news-item">
         <span class="date">2026.10.31</span>
-        <span class="txt">サクマーズ開催概要を公開しました｜2026年10月31日（土）／関東国際カントリークラブ 東コース</span>
-        <a href="#outline" class="more">詳細を見る →</a>
+        <span class="txt">サクマーズを開催しました｜2026年10月31日（土）／関東国際カントリークラブ 東コース</span>
+        <a href="#gallery" class="more">写真を見る →</a>
       </div>
     </div>
   </div>
@@ -484,15 +565,15 @@
 <section class="sec sec-green entry" id="entry">
   <div class="wrap">
     <div class="rv">
-      <span class="kicker">Join Us</span>
-      <h2 style="margin-top:14px">サクマーズ、<br>本戦への切符をかけて。</h2>
+      <span class="kicker">Thank You</span>
+      <h2 style="margin-top:14px">サクマーズでは、<br>ありがとうございました。</h2>
       <p class="meta">開催日 <b>2026年10月31日（土）</b>　／　参加者 <b>12名（3組）</b></p>
       <div class="btns" style="justify-content:center">
-        <a href="#outline" class="btn solid">開催概要を見る</a>
+        <a href="#gallery" class="btn solid">ギャラリーを見る</a>
         <a href="https://masakarz8667.shotty.net/" class="btn" target="_blank" rel="noopener">マサカーズ本戦を見る</a>
       </div>
       <p class="entry-note">
-        ご参加の皆様、よろしくお願いいたします。<br>
+        ご参加いただいた皆様、ありがとうございました。<br>
         <b>予約者：作間裕一</b><br>
         プレー代 12,990円（税抜11,264円＋消費税1,126円＋ゴルフ場利用税600円）。
       </p>
@@ -519,6 +600,7 @@
           <li><a href="#outline">開催概要</a></li>
           <li><a href="#schedule">当日の流れ</a></li>
           <li><a href="#players">出場選手</a></li>
+          <li><a href="#gallery">ギャラリー</a></li>
           <li><a href="#venue">会場</a></li>
           <li><a href="#related">関連大会</a></li>
         </ul>
@@ -550,6 +632,37 @@
   // reveal on scroll
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+  document.querySelectorAll('[data-slideshow]').forEach(root=>{
+    const slides=[...root.querySelectorAll('.scene-slide')];
+    const countEl=root.querySelector('[data-count]');
+    const dotsWrap=root.querySelector('[data-dots]');
+    let i=0, timer=null;
+    const total=slides.length;
+    const interval=4200;
+    slides.forEach((_,idx)=>{
+      const b=document.createElement('button');
+      b.type='button';
+      b.setAttribute('aria-label', `${idx+1}枚目`);
+      b.addEventListener('click',()=>{go(idx); restart();});
+      dotsWrap.appendChild(b);
+    });
+    const dots=[...dotsWrap.querySelectorAll('button')];
+    function go(n){
+      i=(n+total)%total;
+      slides.forEach((s,idx)=>s.classList.toggle('is-active',idx===i));
+      dots.forEach((d,idx)=>d.classList.toggle('is-active',idx===i));
+      countEl.textContent=`${i+1} / ${total}`;
+    }
+    function restart(){
+      if(timer) clearInterval(timer);
+      timer=setInterval(()=>go(i+1), interval);
+    }
+    root.querySelector('[data-prev]').addEventListener('click',()=>{go(i-1); restart();});
+    root.querySelector('[data-next]').addEventListener('click',()=>{go(i+1); restart();});
+    go(0);
+    restart();
+  });
 </script>
 </body>
 </html>
